@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
+@import url("fontawesome-all.min.css");
+header {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font-family: "Source Sans Pro", "sans-serif";
+		vertical-align: baseline;
+		display: block;
+	}
+
+		header p {
+			display: block;
+			margin: 1em 0 0 0;
+			padding: 0 0 0.5em 0;
+		}
+		#header h1 {
+			position: absolute;
+			left: 1em;
+			top: 0;
+			height: 3em;
+			line-height: 3em;
+			cursor: default;
+			color: #39454b;
+			font-size: 2.3em;
+		}
+
+			#header h1 a {
+				font-size: 1.25em;
+			}
+
+		#header nav {
+			position: absolute;
+			right: 0.5em;
+			top: 0;
+			height: 3em;
+			line-height: 3em;
+		}
+
+			#header nav ul {
+				margin: 0;
+			}
+
+				#header nav ul li {
+					display: inline-block;
+					margin-left: 0.5em;
+					font-size: 0.9em;
+				}
+
+					#header nav ul li a {
+						display: block;
+						color: #39454b;
+						text-decoration: none;
+						height: 3em;
+						line-height: 3em;
+						padding: 0 0.5em 0 0.5em;
+						outline: 0;
+					}
+/* Header vit ruta */ 
+
+	#header {
+		position: fixed;
+		z-index: 10000;
+		left: 0;
+		top: 0;
+		width: 100%;
+		background: rgba(255, 255, 255, 0.95);
+		height: 6.5em;
+		line-height: 3em;
+		box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.1);
+	}
+
+		#header h1 {
+			position: absolute;
+			left: 1em;
+			top: 0;
+			height: 3em;
+			line-height: 3em;
+			cursor: default;
+		}
+
+			#header h1 a {
+				font-size: 1.25em;
+			}
+
+		#header nav {
+			position: absolute;
+			right: 0.5em;
+			top: 0;
+			height: 3em;
+			line-height: 3em;
+		}
+
+			#header nav ul {
+				margin: 0;
+			}
+
+				#header nav ul li {
+					display: inline-block;
+					margin-left: 0.5em;
+					font-size: 2.2em;
+				}
+
+					#header nav ul li a {
+						display: block;
+						color: #39454b;
+						text-decoration: none;
+						height: 3em;
+						line-height: 3em;
+						padding: 0 0.5em 0 0.5em;
+						outline: 0;
+					}
+
+		@media screen and (max-width: 736px) {
+
+			#header {
+				height: 2.5em;
+				line-height: 2.5em;
+			}
+
+				#header h1 {
+					text-align: center;
+					position: relative;
+					left: 0;
+					top: 0;
+					height: 2.5em;
+					line-height: 2.5em;
+				}
+
+					#header h1 a {
+						font-size: 1em;
+					}
+
+				#header nav {
+					display: none;
+				}
+
+		}
+*,
+*::before,
+*::after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html{
+	font-family: sans-serif;
+	font-size: 10px;
+}
+
+body{
+	width: 100%;
+	height: 100vh;
+	background: #eee;
+	display: flex;
+}
+
+.container{
+	width: 100%;
+	max-width: 95%;
+	height: 100%;
+	max-height: 85%;
+	margin: auto;
+	padding: 0 1.5rem;
+}
+
+.image-gallery{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	grid-gap: 1.5rem;
+	grid-template-areas: 
+				"img-9 img-10 img-2 img-3"
+				"img-4 img-5 img-2 img-6"
+				"img-7 img-8 img-1 img-1";
+}
+
+.image-gallery a{
+	width: 100%;
+	height: 30rem;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+}
+
+.image-gallery a i{
+	color: rgba(255,255,255, 1);
+	font-size: 3rem;
+	position: relative;
+	z-index: 100;
+	padding: 1rem 3rem;
+	border: 2px solid rgba(255, 255, 255, 1);
+	border-radius: .4rem;
+	opacity: 0;
+	transition: opacity .5s;
+}
+
+.image-gallery a::before{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, .8);
+	opacity: 0;
+	transition: opacity .5s;
+}
+
+.image-gallery a:hover i,
+.image-gallery a:hover::before{
+	opacity: 0.8;
+}
+
+.img-1{
+	grid-area: img-1;
+	background-image: url("bilder/0001.jpg");
+}
+.img-2{
+	grid-area: img-2;
+	min-height: 61.5rem;
+	background-image: url("bilder/0002.jpg");
+}
+.img-3{
+	grid-area: img-3;
+	background-image: url("bilder/0003.jpg");
+}
+.img-4{
+	grid-area: img-4;
+	background-image: url("bilder/0004.jpg");
+}
+.img-5{
+	grid-area: img-5;
+	background-image: url("bilder/0005.jpg");
+}
+.img-6{
+	grid-area: img-6;
+	background-image: url("bilder/0006.jpg");
+}
+.img-7{
+	grid-area: img-7;
+	background-image: url("bilder/0007.jpg");
+}
+.img-8{
+	grid-area: img-8;
+	background-image: url("bilder/0008.jpg");
+}
+.img-9{
+	grid-area: img-9;
+	background-image: url("bilder/0016.png");
+}
+.img-10{
+	grid-area: img-10;
+	background-image: url("bilder/0017.png");
+}
